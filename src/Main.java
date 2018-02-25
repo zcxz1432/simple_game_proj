@@ -13,7 +13,7 @@ public class Main {
 	private static int ENEMYmaxhp = 10;//적 최대HP
 	private static int ENEMYdam = 1;//적 공격력
 	
-	public static int not = 0, not2 = 0;//클래스에서 함수를 구분하기 위한 인자값
+	public static int not = 0, not2 = 0, not3 = 0;//클래스에서 함수를 구분하기 위한 인자값
 	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -49,15 +49,23 @@ public class Main {
 	        	ENEMYhp -= DAMEGE;//ENEMYhp <- ENEMYhp - DAMEGE
 	           System.out.println("적에게 " + DAMEGE + "의 대미지를 입혔습니다");//output 공격할 대상이 없습니다
 	           if(hide != 1) {//은신상태가 아닐경우
-	        	   HP -= ENEMYdam*ENEMYlev/2;
+	        	   HP -= ENEMYdam+ENEMYlev;
 	        	   System.out.println("적에게서 "+ ENEMYdam*ENEMYlev/2 + "의 대미지를 입었습니다");//output 적에게서 ENEMYdam 의 대미지를 입었습니다
 	           }
 	        	   
 	        }
 	        
 	        else if(input == 2) {//휴식을 선택했을경우
-	           System.out.println("휴식으로 hp가 가득 찼습니다");//output 휴식으로hp가 가득 찼습니다
-	           HP = MAXHP;//hp <- maxhp
+	           
+	           
+	           if((HP += 2) >= MAXHP) {//HP가 너무 많이 찰경우
+	        	   HP = MAXHP;//HP를 최대HP로 만든다
+	           
+	           }
+	           else {//그렇지 않을경우
+	        	   HP += 2;//hp <- hp + 2
+	        	   System.out.println("휴식으로 hp가 2 올랐습니다");//output 휴식으로hp가 2 올랐습니다
+	           }
 	        }
 	        
 	        else if(hide == 1 && input == 3){//기습을 선택 했을경우
@@ -81,6 +89,7 @@ public class Main {
 		        LEVEL = lvu.LevelUp(LEVEL);//levelup이벤트 실행
 		        MAXHP = lvu.LevelUp(MAXHP, not, not2);//levelup이벤트 실행2
 		        MAXEXP = lvu.LevelUp(MAXEXP, LEVEL);//levelup이벤트 실행 3
+		        DAMEGE = lvu.LevelUp(DAMEGE, not, not2, not3);
 		        }//if end(levelup이벤트)
 	        }//if end
 	        

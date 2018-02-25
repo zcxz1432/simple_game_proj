@@ -13,6 +13,6 @@ public class LevelUp implements TestSample{
 		return maxexp += (level*10);//levelup까지의 exp양 증가
 	}//LevelUp end
 	public int LevelUp(int damege, int not, int not2, int not3) {
-		return damege += 2;
+		return damege += 2;//damege 증가
 	}
 }//LevelUp class end

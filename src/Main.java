@@ -50,28 +50,32 @@ public class Main {
 	           System.out.println("적에게 " + DAMEGE + "의 대미지를 입혔습니다");//output 공격할 대상이 없습니다
 	           if(hide != 1) {//은신상태가 아닐경우
 	        	   HP -= ENEMYdam+ENEMYlev;
-	        	   System.out.println("적에게서 "+ ENEMYdam*ENEMYlev/2 + "의 대미지를 입었습니다");//output 적에게서 ENEMYdam 의 대미지를 입었습니다
+	        	   System.out.println("적에게서 "+ (ENEMYdam+ENEMYlev) + "의 대미지를 입었습니다");//output 적에게서 ENEMYdam 의 대미지를 입었습니다
 	           }
 	        	   
 	        }
 	        
 	        else if(input == 2) {//휴식을 선택했을경우
 	           
-	           
-	           if((HP += 2) >= MAXHP) {//HP가 너무 많이 찰경우
+	        	HP += 1;//hp <- hp + 1
+	           if(HP >= MAXHP) {//HP가 너무 많이 찰경우
 	        	   HP = MAXHP;//HP를 최대HP로 만든다
-	           
-	           }
+	        	   System.out.println("휴식으로 hp가 가득찼습니다");//output 휴식으로hp가 가득찼습니다
+	           }//if end
 	           else {//그렇지 않을경우
-	        	   HP += 2;//hp <- hp + 2
-	        	   System.out.println("휴식으로 hp가 2 올랐습니다");//output 휴식으로hp가 2 올랐습니다
-	           }
-	        }
+	        	   
+	        	   System.out.println("휴식으로 hp가 1 올랐습니다");//output 휴식으로hp가 2 올랐습니다
+	           }//else end
+	           if(hide == 0) {
+	        	   HP -= ENEMYdam+ENEMYlev;
+	        	   System.out.println("적에게서 "+ (ENEMYdam+ENEMYlev) + "의 대미지를 입었습니다");//output 적에게서 ENEMYdam 의 대미지를 입었습니다
+	           }//if end
+	        }//else if end
 	        
 	        else if(hide == 1 && input == 3){//기습을 선택 했을경우
 	           hide = 0;//hide <- 0(은신상태 해재)
-	           ENEMYhp -= DAMEGE*3;
-	           System.out.println("기습으로 적에게" + DAMEGE*3 + "의 대미지를 입혔습니다");
+	           ENEMYhp -= DAMEGE*2;
+	           System.out.println("기습으로 적에게" + DAMEGE*2 + "의 대미지를 입혔습니다");
 
 
 	        }//if end
@@ -89,7 +93,7 @@ public class Main {
 		        LEVEL = lvu.LevelUp(LEVEL);//levelup이벤트 실행
 		        MAXHP = lvu.LevelUp(MAXHP, not, not2);//levelup이벤트 실행2
 		        MAXEXP = lvu.LevelUp(MAXEXP, LEVEL);//levelup이벤트 실행 3
-		        DAMEGE = lvu.LevelUp(DAMEGE, not, not2, not3);
+		        DAMEGE = lvu.LevelUp(DAMEGE, not, not2, not3);//levelup이벤트 실행 4
 		        }//if end(levelup이벤트)
 	        }//if end
 	        

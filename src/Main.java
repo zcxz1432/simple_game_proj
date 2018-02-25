@@ -63,9 +63,7 @@ public class Main {
 	           ENEMYhp -= DAMEGE*3;
 	           System.out.println("기습으로 적에게" + DAMEGE*3 + "의 대미지를 입혔습니다");
 
-	           if(EXP >= MAXEXP) {//exp >= maxexp(exp가 가득 찼다면)
-	        	   lvu.LevelUp(LEVEL);//levelup이벤트 실행
-	           }//if end(levelup이벤트)
+
 	        }//if end
 	        if(input == 4) {//4를 입력했을 때
 	        	return;
@@ -76,6 +74,11 @@ public class Main {
 		        System.out.println("10exp를 얻었습니다");//output 10exp를 얻었습니다
 		        EXP += 10;//exp <- exp + 10(exp 10 추가)
 		        ENEMYhp = 10;// 적 hp 초기화
+		        //ㅣ피카님 이부분이 안돌아가요
+		        //v
+		        if(EXP >= MAXEXP) {//exp >= maxexp(exp가 가득 찼다면)
+		        lvu.LevelUp(LEVEL);//levelup이벤트 실행
+		        }//if end(levelup이벤트)
 	        }//if end
 	        
 	    }//for end

@@ -4,15 +4,16 @@ public class Main {
 	private static int HP = 10;//현재 HP
 	private static int MAXHP = 10;//최대 HP
 	private static int LEVEL = 1;//현재 LEVEL
-	private static int EXP = 90;//현재 EXP
-	private static int MAXEXP = 100;//최대 EXP
+	private static int EXP = 1;//현재 EXP
+	private static int MAXEXP = 10;//최대 EXP
 	private static int DAMEGE = 1;//공격력
 	
-	private static int ENEMYlev = 10;//적 LEVEL
+	private static int ENEMYlev = 1;//적 LEVEL
 	private static int ENEMYhp = 10;//적 HP
 	private static int ENEMYmaxhp = 10;//적 최대HP
 	private static int ENEMYdam = 1;//적 공격력
-	public static int not = 0, not2 = 0;
+	
+	public static int not = 0, not2 = 0;//클래스에서 함수를 구분하기 위한 인자값
 	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -48,8 +49,8 @@ public class Main {
 	        	ENEMYhp -= DAMEGE;//ENEMYhp <- ENEMYhp - DAMEGE
 	           System.out.println("적에게 " + DAMEGE + "의 대미지를 입혔습니다");//output 공격할 대상이 없습니다
 	           if(hide != 1) {//은신상태가 아닐경우
-	        	   HP -= ENEMYdam;
-	        	   System.out.println("적에게서 "+ ENEMYdam + "의 대미지를 입었습니다");
+	        	   HP -= ENEMYdam*ENEMYlev/2;
+	        	   System.out.println("적에게서 "+ ENEMYdam*ENEMYlev/2 + "의 대미지를 입었습니다");//output 적에게서 ENEMYdam 의 대미지를 입었습니다
 	           }
 	        	   
 	        }
@@ -72,11 +73,10 @@ public class Main {
 	        
 	        if(ENEMYhp <= 0) {// 적 HP가 0보다 작거나 같을때(적을 죽였을때)
 	        	System.out.println("기습을 당한 적이 죽었습니다");//output 기습을 당한 적이 죽었습니다
-		        System.out.println("10exp를 얻었습니다");//output 10exp를 얻었습니다
-		        EXP += 10;//exp <- exp + 10(exp 10 추가)
-		        ENEMYhp = 10;// 적 hp 초기화
-		        //ㅣ피카님 이부분이 안돌아가요
-		        //v
+		        System.out.println(ENEMYlev + "exp를 얻었습니다");//output 10exp를 얻었습니다
+		        EXP += ENEMYlev;//exp <- exp + 10(exp 10 추가)
+		        ENEMYhp = ENEMYmaxhp;// 적 hp 초기화
+
 		        if(EXP >= MAXEXP) {//exp >= maxexp(exp가 가득 찼다면)
 		        LEVEL = lvu.LevelUp(LEVEL);//levelup이벤트 실행
 		        MAXHP = lvu.LevelUp(MAXHP, not, not2);//levelup이벤트 실행2

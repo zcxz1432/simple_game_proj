@@ -12,6 +12,7 @@ public class Main {
 	private static int ENEMYhp = 10;//적 HP
 	private static int ENEMYmaxhp = 10;//적 최대HP
 	private static int ENEMYdam = 1;//적 공격력
+	public static int not = 0, not2 = 0;
 	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -77,7 +78,9 @@ public class Main {
 		        //ㅣ피카님 이부분이 안돌아가요
 		        //v
 		        if(EXP >= MAXEXP) {//exp >= maxexp(exp가 가득 찼다면)
-		        lvu.LevelUp(LEVEL);//levelup이벤트 실행
+		        LEVEL = lvu.LevelUp(LEVEL);//levelup이벤트 실행
+		        MAXHP = lvu.LevelUp(MAXHP, not, not2);//levelup이벤트 실행2
+		        MAXEXP = lvu.LevelUp(MAXEXP, LEVEL);//levelup이벤트 실행 3
 		        }//if end(levelup이벤트)
 	        }//if end
 	        

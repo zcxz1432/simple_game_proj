@@ -16,7 +16,7 @@ public class game_1 {
 	public static void game_1(String name) {
 		Scan sc = new Scan();
 		LevelUp lvu = new LevelUp();
-		
+
 		System.out.println(name);//output name
 	    System.out.println("*********************************************************");//output *line
 	    System.out.println("1. 공격  2. 휴식  3. 은신  4. 게임끝내기");//output 1. 공격  2. 휴식  3. 은신
@@ -62,7 +62,7 @@ public class game_1 {
 	        	   
 	        	   System.out.println("휴식으로 hp가 1 올랐습니다");//output 휴식으로hp가 2 올랐습니다
 	           }//else end
-	           if(hide == 0) {
+	           if(hide == 0) {//은신상태가 아닐경우
 	        	   HP -= ENEMYdam+ENEMYlev;
 	        	   System.out.println("적에게서 "+ (ENEMYdam+ENEMYlev) + "의 대미지를 입었습니다");//output 적에게서 ENEMYdam 의 대미지를 입었습니다
 	           }//if end
@@ -96,4 +96,5 @@ public class game_1 {
 	    }//for end
 	    System.out.println("죽었습니다 (tip.체력관리를 하면 쉽게 깰 수 있습니다)");//output 죽었습니다 (tip.체력관리를 하면 쉽게 깰 수 있습니다)
 	}//Main end
-}
+	
+}//game_1 end

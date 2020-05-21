@@ -1,9 +1,14 @@
-import java.awt.event.*;
-import javax.swing.*;
+import java.awt.Color;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 
 
 class Frame extends JFrame {
-	JButton b1, b2, b3, b4, b5, bfirst, blast;
+	JButton b1, b2, b3, b4, b5, blast;
 	
 	public Frame() {
 		setTitle("Game");
@@ -12,8 +17,14 @@ class Frame extends JFrame {
 		JPanel p = new JPanel();
 		p.setLayout(null);
 		
-		bfirst = new JButton("첫번쨰 박스");
-		p.add(bfirst);
+		TitledBorder tb = new TitledBorder(new LineBorder(Color.black));
+		JPanel p2 = new JPanel();
+		p2.setLayout(null);
+		//pp.setBackground(bg);
+		p2.setBorder(tb);
+	    p2.setBounds(5,5,325,210);
+	    p.add(p2);
+		
 		
 		b1 = new JButton("공격 버튼 #1");
 		p.add(b1);
@@ -34,7 +45,7 @@ class Frame extends JFrame {
 		p.add(blast);
 		
 		
-		bfirst.setBounds(8,10,320,210);
+		
 		b1.setBounds(8, 230, 64, 60);
 		b2.setBounds(72, 230, 64, 60);
 		b3.setBounds(136, 230, 64, 60);

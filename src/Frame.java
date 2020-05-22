@@ -50,6 +50,15 @@ class Frame extends JFrame {
 	    p.add(label1);
 	    label1.setBounds(27,35,100,100);
 	    
+	    JLabel label3 = new JLabel("용사");
+	    label3.setBounds(53, 125, 100, 50);
+	    p.add(label3);
+	    
+	    JLabel label4 = new JLabel("두사");
+	    label4.setBounds(235, 125, 100, 50);
+	    p.add(label4);
+	    
+	    
 	
 	    JLabel label2 = new JLabel(new ImageIcon(img2));
 	    p2.setOpaque(false);

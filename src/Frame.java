@@ -1,7 +1,13 @@
 import java.awt.Color;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
@@ -17,15 +23,39 @@ class Frame extends JFrame {
 		JPanel p = new JPanel();
 		p.setLayout(null);
 		
-		TitledBorder tb = new TitledBorder(new LineBorder(Color.black));
+
+	    Image img1 = null;
+	    Image img2 = null;
+	    
+	    try {
+	       
+	        File image1 = new File("play.png");
+	        img1 = ImageIO.read(image1);
+	        File image2 = new File("enemy.png");
+	        img2 = ImageIO.read(image2);
+	       
+	    } catch (IOException e) {
+	    }
+	    
+	    TitledBorder tb = new TitledBorder(new LineBorder(Color.black));
 		JPanel p2 = new JPanel();
 		p2.setLayout(null);
-		//pp.setBackground(bg);
+		
 		p2.setBorder(tb);
 	    p2.setBounds(5,5,325,210);
 	    p.add(p2);
 		
-		
+	    
+	    JLabel label1 = new JLabel(new ImageIcon(img1));
+	    p.add(label1);
+	    label1.setBounds(27,35,100,100);
+	    
+	
+	    JLabel label2 = new JLabel(new ImageIcon(img2));
+	    p2.setOpaque(false);
+	    p.add(label2);
+	    label2.setBounds(205,43,90,90);
+	 
 		b1 = new JButton("공격 버튼 #1");
 		p.add(b1);
 		

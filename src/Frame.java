@@ -68,17 +68,24 @@ class Frame extends JFrame {
 	    p.add(label2);
 	    label2.setBounds(205,43,90,90);
 	 
-	    JProgressBar progress;
-	    	progress = new JProgressBar(0,10);
-	    	progress.setValue(10);
-	    	progress.setStringPainted(false);
-	    	progress.setBounds(53,160,50,11);
-	    	progress.setBackground(Color.red);
-	    	progress.setForeground(Color.red);
+	    JProgressBar hp, hp2;
+	    	hp = new JProgressBar(0,10);
+	    	hp.setValue(10);
+	    	hp.setStringPainted(false);
+	    	hp.setBounds(53,160,50,11);
+	    	hp.setBackground(Color.red);
+	    	hp.setForeground(Color.red);
 	  
-	    	add(progress);
+	    	add(hp);
 	  
-
+	          hp2 = new JProgressBar(0,10);
+	    	  hp2.setValue(10);
+	    	  hp2.setStringPainted(false);
+	          hp2.setBounds(235,160,50,12);
+	          hp2.setBackground(Color.red);
+	          hp2.setForeground(Color.red);
+	     
+	          add(hp2);
 
 	    
 		b1 = new JButton("공격 버튼 #1");

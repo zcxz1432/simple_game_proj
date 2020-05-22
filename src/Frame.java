@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
@@ -9,8 +10,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
+
 
 
 class Frame extends JFrame {
@@ -65,6 +68,19 @@ class Frame extends JFrame {
 	    p.add(label2);
 	    label2.setBounds(205,43,90,90);
 	 
+	    JProgressBar progress;
+	    	progress = new JProgressBar(0,10);
+	    	progress.setValue(10);
+	    	progress.setStringPainted(false);
+	    	progress.setBounds(53,160,50,11);
+	    	progress.setBackground(Color.red);
+	    	progress.setForeground(Color.red);
+	  
+	    	add(progress);
+	  
+
+
+	    
 		b1 = new JButton("공격 버튼 #1");
 		p.add(b1);
 		

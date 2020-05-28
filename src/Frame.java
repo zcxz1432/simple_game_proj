@@ -29,6 +29,11 @@ class Frame extends JFrame {
 
 	    Image img1 = null;
 	    Image img2 = null;
+	    Image img3 = null;
+	    Image img4 = null;
+	    Image img5 = null;
+	    Image img6 = null;
+	    Image img7 = null;
 	    
 	    try {
 	       
@@ -36,6 +41,16 @@ class Frame extends JFrame {
 	        img1 = ImageIO.read(image1);
 	        File image2 = new File("enemy.png");
 	        img2 = ImageIO.read(image2);
+	        File image3 = new File("screenshots/attack.png");
+	        img3 = ImageIO.read(image3);
+	        File image4 = new File("screenshots/defense.png");
+	        img4 = ImageIO.read(image4);
+	        File image5 = new File("screenshots/heal.png");
+	        img5 = ImageIO.read(image5);
+	        File image6 = new File("screenshots/hiding.png");
+	        img6 = ImageIO.read(image6);
+	        File image7 = new File("screenshots/end.png");
+	        img7 = ImageIO.read(image7);
 	       
 	    } catch (IOException e) {
 	    }
@@ -67,6 +82,7 @@ class Frame extends JFrame {
 	    p2.setOpaque(false);
 	    p.add(label2);
 	    label2.setBounds(205,43,90,90);
+	    
 	 
 	    JProgressBar hp, hp2;
 	    	hp = new JProgressBar(0,10);
@@ -87,32 +103,46 @@ class Frame extends JFrame {
 	     
 	          add(hp2);
 
-	    
-		b1 = new JButton("공격 버튼 #1");
+	          
+		b1 = new JButton("공격");
 		p.add(b1);
 		
-		b2 = new JButton("방어 버튼 #2");
+		b2 = new JButton("방어");
 		p.add(b2);
 		
-		b3 = new JButton("휴식 버튼 #3");
+		b3 = new JButton("치유");
 		p.add(b3);
 		
-		b4 = new JButton("은신 버튼 #4");
+		b4 = new JButton("은신");
 		p.add(b4);
 		
-		b5 = new JButton("종료 버튼 #5");
+		b5 = new JButton("종료");
 		p.add(b5);
 		
 		blast = new JButton("마지막 박스");
 		p.add(blast);
 		
+		JLabel label5 = new JLabel(new ImageIcon(img3));
+	    p.add(label5);
+	    label5.setBounds(11,225,60,60);
+	    JLabel label6 = new JLabel(new ImageIcon(img4));
+	    p.add(label6);
+	    label6.setBounds(75,225,60,60);
+	    JLabel label7 = new JLabel(new ImageIcon(img5));
+	    p.add(label7);
+	    label7.setBounds(139,225,60,60);
+	    JLabel label8 = new JLabel(new ImageIcon(img6));
+	    p.add(label8);
+	    label8.setBounds(203,225,60,60);
+	    JLabel label9 = new JLabel(new ImageIcon(img7));
+	    p.add(label9);
+	    label9.setBounds(267,225,60,60);
 		
-		
-		b1.setBounds(8, 230, 64, 60);
-		b2.setBounds(72, 230, 64, 60);
-		b3.setBounds(136, 230, 64, 60);
-		b4.setBounds(200, 230, 64, 60);
-		b5.setBounds(264, 230, 64, 60);
+		b1.setBounds(8, 290, 64, 25);
+		b2.setBounds(72, 290, 64, 25);
+		b3.setBounds(136, 290, 64, 25);
+		b4.setBounds(200, 290, 64, 25);
+		b5.setBounds(264, 290, 64, 25);
 		blast.setBounds(8, 330, 320, 160);
 
 		

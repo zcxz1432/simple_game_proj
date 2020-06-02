@@ -155,7 +155,40 @@ class Frame extends JFrame  {
 				  }
 		
 		});
-         
+         b1.addActionListener(new ActionListener() {
+     		
+ 			
+ 			public void actionPerformed(ActionEvent e) {
+ 				 
+ 				label1.setVisible(true);
+ 				hp.setVisible(true);
+ 	  }
+ 	
+ 		});
+ 		
+ 	b2.addActionListener(new ActionListener() {
+ 		
+ 			
+ 			public void actionPerformed(ActionEvent e) {
+ 				 
+ 				label1.setVisible(true);
+ 				hp.setVisible(true);
+
+ 				  }
+ 	
+ 		});
+ 		
+ 	b3.addActionListener(new ActionListener() {
+ 		
+ 		
+ 		public void actionPerformed(ActionEvent e) {
+ 			 
+ 			label1.setVisible(true);
+ 			hp.setVisible(true);
+
+ 			  }
+
+ 	});
          
 		
 		add (p);

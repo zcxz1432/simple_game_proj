@@ -22,7 +22,7 @@ class Frame extends JFrame  {
 	JButton b1, b2, b3, b4, b5, blast;
 	
 	public Frame() {
-		setTitle("Game");
+		setTitle("Fight of Two Four");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(350,550);
 		JPanel p = new JPanel();

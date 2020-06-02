@@ -1,6 +1,8 @@
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
@@ -16,7 +18,7 @@ import javax.swing.border.TitledBorder;
 
 
 
-class Frame extends JFrame {
+class Frame extends JFrame  {
 	JButton b1, b2, b3, b4, b5, blast;
 	
 	public Frame() {
@@ -144,7 +146,17 @@ class Frame extends JFrame {
 		b4.setBounds(200, 290, 64, 25);
 		b5.setBounds(264, 290, 64, 25);
 		blast.setBounds(8, 330, 320, 160);
-
+		
+         b4.addActionListener(new ActionListener() {
+		
+			public void actionPerformed(ActionEvent e) {
+				label1.setVisible(false);
+				hp.setVisible(false);
+				  }
+		
+		});
+         
+         
 		
 		add (p);
 		setVisible(true);

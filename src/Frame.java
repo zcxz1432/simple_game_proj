@@ -147,6 +147,10 @@ class Frame extends JFrame  {
 		b5.setBounds(264, 290, 64, 25);
 		blast.setBounds(8, 330, 320, 160);
 		
+		
+		add (p);
+		setVisible(true);
+		
          b4.addActionListener(new ActionListener() {
 		
 			public void actionPerformed(ActionEvent e) {
@@ -190,10 +194,62 @@ class Frame extends JFrame  {
 
  	});
          
+	
+	b5.addActionListener(new ActionListener() {
 		
-		add (p);
-		setVisible(true);
+		public void actionPerformed(ActionEvent e) {
+			new newWindow();
+		}
+	});
+		}
+
 		
 	}
+	
+	class newWindow extends JFrame {
+		
+		newWindow()  {
+			setTitle("종료");
+			
+			JPanel NewWindowContainer = new JPanel();
+			setContentPane(NewWindowContainer);
+			
+			JLabel newlabel = new JLabel("게임을 종료할까요?");
+			JButton btn = new JButton("네");
+			JButton btn2 = new JButton("아니오");
+			NewWindowContainer.add(newlabel);
+			
+			NewWindowContainer.add(btn);
+			NewWindowContainer.add(btn2);
+			
+			setSize(160,120);
+			setVisible(true);
+			
+			btn.addActionListener(new ActionListener() {
+				
+				public void actionPerformed(ActionEvent e) {
+					System.exit(0);
+			
 
-}
+				}
+			});
+
+			btn2.addActionListener(new ActionListener() {
+				
+				public void actionPerformed(ActionEvent e) {
+					dispose();
+			
+
+				}
+			});
+			
+				}
+			}
+				
+
+
+	
+	
+	
+	
+

@@ -203,9 +203,11 @@ class Frame extends JFrame  {
  		
  		
  		public void actionPerformed(ActionEvent e) {
- 			
+ 			hp.setValue(num1 + 1);
+ 			num1 = num1 + 1;
  			label1.setVisible(true);
  			hp.setVisible(true);
+ 			label10.setVisible(false);
 
  			  }
 

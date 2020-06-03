@@ -1,5 +1,4 @@
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,8 +20,9 @@ import javax.swing.border.TitledBorder;
 class Frame extends JFrame  {
 	int num1 = 10;
 	int num2 = 10;
-	JButton b1, b2, b3, b4, b5, blast;
+	JButton b1, b2, b3, b4, b5 ;
 	
+
 	public Frame() {
 		setTitle("Fight of Two Four");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,9 +67,8 @@ class Frame extends JFrame  {
 		p2.setLayout(null);
 		
 		p2.setBorder(tb);
-	    p2.setBounds(5,5,325,210);
+	    p2.setBounds(5, 5, 325, 210);
 	    p.add(p2);
-		
 	    
 	    JLabel label1 = new JLabel(new ImageIcon(img1));
 	    p.add(label1);
@@ -83,8 +82,7 @@ class Frame extends JFrame  {
 	    label4.setBounds(235, 125, 100, 50);
 	    p.add(label4);
 	    
-	    
-	
+	      
 	    JLabel label2 = new JLabel(new ImageIcon(img2));
 	    p2.setOpaque(false);
 	    p.add(label2);
@@ -126,8 +124,6 @@ class Frame extends JFrame  {
 		b5 = new JButton("종료");
 		p.add(b5);
 		
-		blast = new JButton("마지막 박스");
-		p.add(blast);
 		
 		JLabel label5 = new JLabel(new ImageIcon(img3));
 	    p.add(label5);
@@ -149,13 +145,18 @@ class Frame extends JFrame  {
 	    label10.setBounds(27,35,100,100);
 	    label10.setVisible(false);
 	    
+	    JLabel label = new JLabel("");
+	    p.add(label);
+	    label.setBounds(8, 330, 320, 160);
+	    
 		
 		b1.setBounds(8, 290, 64, 25);
 		b2.setBounds(72, 290, 64, 25);
 		b3.setBounds(136, 290, 64, 25);
 		b4.setBounds(200, 290, 64, 25);
 		b5.setBounds(264, 290, 64, 25);
-		blast.setBounds(8, 330, 320, 160);
+		
+		
 		
 		
 		add (p);
@@ -167,7 +168,9 @@ class Frame extends JFrame  {
 				label1.setVisible(false);
 				hp.setVisible(false);
 				label10.setVisible(false);
-				  }
+				
+				label.setText("용사님이 두사의 눈앞에서 사라졌습니다 !");
+				}
 		
 		});
          b1.addActionListener(new ActionListener() {	// 공격
@@ -176,11 +179,15 @@ class Frame extends JFrame  {
  			public void actionPerformed(ActionEvent e) {
  				hp2.setValue(num2 -1);
  				num2 = num2 - 1;
- 				hp.setValue(num1 -1);
- 				num1 = num1 - 1;
+ 				hp.setValue(num1 -2);
+ 				num1 = num1 - 2;
  				label1.setVisible(true);
  				hp.setVisible(true);
 				label10.setVisible(false);
+				
+				label.setText("<html> 용사님이 두사에게 1의 피해를 입혔습니다 ! <br> 용사님은 두사에게 2의 피해를 입었습니다 !");
+								
+			
 
  	  }
  	
@@ -194,7 +201,9 @@ class Frame extends JFrame  {
  				 
  				label1.setVisible(true);
  				hp.setVisible(true);
-
+ 				
+ 				label.setText("용사님이 방어막 안으로 숨었습니다 !");
+ 				
  				  }
  	
  		});
@@ -208,6 +217,9 @@ class Frame extends JFrame  {
  			label1.setVisible(true);
  			hp.setVisible(true);
  			label10.setVisible(false);
+ 			
+ 			label.setText("용사님이 +1만큼의 체력을 회복했습니다 !");
+ 			
 
  			  }
 
@@ -223,8 +235,7 @@ class Frame extends JFrame  {
 		}
 
 		
-	}
-	
+
 	class newWindow extends JFrame {
 		
 		newWindow()  {
@@ -263,7 +274,8 @@ class Frame extends JFrame  {
 			});
 			
 				}
-			}
+	}
+}
 				
 
 

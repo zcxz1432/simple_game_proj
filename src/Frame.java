@@ -38,6 +38,7 @@ class Frame extends JFrame  {
 	    Image img5 = null;
 	    Image img6 = null;
 	    Image img7 = null;
+	    Image img8 = null;
 	    
 	    try {
 	       
@@ -55,7 +56,9 @@ class Frame extends JFrame  {
 	        img6 = ImageIO.read(image6);
 	        File image7 = new File("screenshots/end.png");
 	        img7 = ImageIO.read(image7);
-	       
+	        File image8 = new File("screenshots/shield.png");
+	        img8 = ImageIO.read(image8);
+	        
 	    } catch (IOException e) {
 	    }
 	    
@@ -141,6 +144,11 @@ class Frame extends JFrame  {
 	    JLabel label9 = new JLabel(new ImageIcon(img7));
 	    p.add(label9);
 	    label9.setBounds(267,225,60,60);
+	    JLabel label10 = new JLabel(new ImageIcon(img8));
+	    p.add(label10);
+	    label10.setBounds(27,35,100,100);
+	    label10.setVisible(false);
+	    
 		
 		b1.setBounds(8, 290, 64, 25);
 		b2.setBounds(72, 290, 64, 25);
@@ -153,15 +161,16 @@ class Frame extends JFrame  {
 		add (p);
 		setVisible(true);
 		
-         b4.addActionListener(new ActionListener() {
+         b4.addActionListener(new ActionListener() {	// 은신 
 		
 			public void actionPerformed(ActionEvent e) {
 				label1.setVisible(false);
 				hp.setVisible(false);
+				label10.setVisible(false);
 				  }
 		
 		});
-         b1.addActionListener(new ActionListener() {
+         b1.addActionListener(new ActionListener() {	// 공격
      		
  			
  			public void actionPerformed(ActionEvent e) {
@@ -171,14 +180,17 @@ class Frame extends JFrame  {
  				num1 = num1 - 1;
  				label1.setVisible(true);
  				hp.setVisible(true);
+				label10.setVisible(false);
+
  	  }
  	
  		});
  		
- 	b2.addActionListener(new ActionListener() {
+ 	b2.addActionListener(new ActionListener() {		// 방어
  		
  			
  			public void actionPerformed(ActionEvent e) {
+ 				label10.setVisible(true);
  				 
  				label1.setVisible(true);
  				hp.setVisible(true);
@@ -187,11 +199,11 @@ class Frame extends JFrame  {
  	
  		});
  		
- 	b3.addActionListener(new ActionListener() {
+ 	b3.addActionListener(new ActionListener() {		// 치유
  		
  		
  		public void actionPerformed(ActionEvent e) {
- 			 
+ 			
  			label1.setVisible(true);
  			hp.setVisible(true);
 
@@ -200,7 +212,7 @@ class Frame extends JFrame  {
  	});
          
 	
-	b5.addActionListener(new ActionListener() {
+	b5.addActionListener(new ActionListener() {		// 종료
 		
 		public void actionPerformed(ActionEvent e) {
 			new newWindow();

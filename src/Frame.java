@@ -19,7 +19,8 @@ import javax.swing.border.TitledBorder;
 
 
 class Frame extends JFrame  {
-	int num = 10;
+	int num1 = 10;
+	int num2 = 10;
 	JButton b1, b2, b3, b4, b5, blast;
 	
 	public Frame() {
@@ -89,7 +90,7 @@ class Frame extends JFrame  {
 	 
 	    JProgressBar hp, hp2;
 	    	hp = new JProgressBar(0,10);
-	    	hp.setValue(num);
+	    	hp.setValue(num1);
 	    	hp.setStringPainted(false);
 	    	hp.setBounds(53,160,50,11);
 	    	//hp.setBackground(Color.red);
@@ -98,7 +99,7 @@ class Frame extends JFrame  {
 	    	add(hp);
 	  
 	          hp2 = new JProgressBar(0,10);
-	          hp2.setValue(num);
+	          hp2.setValue(num2);
 	    	  hp2.setStringPainted(false);
 	          hp2.setBounds(235,160,50,12);
 	          //hp2.setBackground(Color.red);
@@ -164,8 +165,10 @@ class Frame extends JFrame  {
      		
  			
  			public void actionPerformed(ActionEvent e) {
- 				hp2.setValue(num -1);
- 				num = num - 1;
+ 				hp2.setValue(num2 -1);
+ 				num2 = num2 - 1;
+ 				hp.setValue(num1 -1);
+ 				num1 = num1 - 1;
  				label1.setVisible(true);
  				hp.setVisible(true);
  	  }

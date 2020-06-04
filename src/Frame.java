@@ -103,18 +103,24 @@ class Frame extends JFrame {
       add(hp2);
 
       b1 = new JButton("공격");
+      b1.setBackground(Color.WHITE);
       p.add(b1);
 
       b2 = new JButton("방어");
+      b2.setBackground(Color.WHITE);
       p.add(b2);
 
       b3 = new JButton("치유");
+      b3.setBackground(Color.WHITE);
       p.add(b3);
 
       b4 = new JButton("은신");
+      b4.setBackground(Color.WHITE);     
       p.add(b4);
+      
 
       b5 = new JButton("종료");
+      b5.setBackground(Color.WHITE);
       p.add(b5);
 
       JLabel label5 = new JLabel(new ImageIcon(img3));

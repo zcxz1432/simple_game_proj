@@ -168,9 +168,9 @@ class Frame extends JFrame {
 
       });
       b1.addActionListener(new ActionListener() { // 공격
-
+    	 
          public void actionPerformed(ActionEvent e) {
-        	   label1.setVisible(true);
+        	   
             if (num2 <= 0 && num1 >= 1) {
                label.setText("용사님이 두사를 처치했습니다 !");        
                new Levelup();
@@ -182,21 +182,46 @@ class Frame extends JFrame {
 
                new Restart();
 
-            } else
+            } else {
                label.setText("<html> 용사님이 두사에게 1의 피해를 입혔습니다 ! " + "<br> 용사님은 두사에게 2의 피해를 입었습니다 !");
-            label.setVisible(true);
-
-            hp.setValue(num1 - 2);
-            num1 = num1 - 2;
+                           
             hp2.setValue(num2 - 1);
             num2 = num2 - 1;
+             
+            if(label1.isVisible()==true)
+            	
+        	{
+        	  hp.setValue(num1 - 2);
+              num1 = num1 - 2;
+        	}
+              
+           
+            
 
             hp.setVisible(true);
             hp2.setVisible(true);
             label10.setVisible(false);
-
+            
+            label1.setVisible(true);
+            
+            
+            
+            
+            }
+            
+            
+            
+            
+            
+          
          }
 
+         
+                  
+        
+         
+       
+         
       });
 
       b2.addActionListener(new ActionListener() { // 방어

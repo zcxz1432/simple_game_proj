@@ -168,7 +168,8 @@ class Frame extends JFrame {
 				if (num2 <= 0 && num1 >= 1) {
 					label.setText("용사님이 두사를 처치했습니다 !");
 					label.setVisible(true);
-					hp.setValue(num1 = 10);
+				
+					new Levelup();
 
 				} else if (num1 <= 0) {
 					label.setText("<html>용사님의 체력이 바닥났습니다 !" + "<br> 게임을 다시 시작해주세요 !");
@@ -211,13 +212,33 @@ class Frame extends JFrame {
 		b3.addActionListener(new ActionListener() { // 치유
 
 			public void actionPerformed(ActionEvent e) {
-				hp.setValue(num1 + 1);
+
+				if (num1 >= 10) {
+					label.setText("용사님이 체력이 모두 회복되었습니다!");
+					label.setVisible(true);
+					hp.setValue(num1 = 10);
+					num1 = 10;
+
+				} else if (num1 <= 0) {
+					label.setText("<html> 용사님의 체력이 바닥났습니다 !" + "<br> 게임을 다시 시작해주세요 !");
+					label.setVisible(true);
+					hp.setValue(num1 = 0);
+
+					new Restart();
+
+				} else
+					label.setText("용사님이 +1만큼의 체력을 회복했습니다 !");
+				label.setVisible(true);
+				hp.setValue(num1);
 				num1 = num1 + 1;
+
+				hp2.setValue(num2);
+
 				label1.setVisible(true);
-				hp.setVisible(true);
 				label10.setVisible(false);
 
-				label.setText("용사님이 +1만큼의 체력을 회복했습니다 !");
+				hp.setVisible(true);
+				hp2.setVisible(true);
 
 			}
 
@@ -311,5 +332,38 @@ class Restart extends JFrame {
 		dispose();
 		new Frame();
 		repaint();
+	}
+}
+
+class Levelup extends JFrame {
+
+	Levelup() {
+		setTitle("레벨업 !");
+
+		JPanel LevelupContainer = new JPanel();
+		setContentPane(LevelupContainer);
+
+		JLabel newlabel = new JLabel("<html>축하드립니다 ");
+		JButton btn = new JButton("♥ Level UP ♥");
+		LevelupContainer.add(newlabel);
+
+		LevelupContainer.add(btn);
+
+		setSize(160, 120);
+		setBounds(5, 255, 340, 100);
+		setVisible(true);
+
+		btn.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+
+			}
+		});
+
+	}
+
+	private void Levelup() {
+		//레벨업 이벤트
 	}
 }

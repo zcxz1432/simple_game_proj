@@ -233,8 +233,7 @@ class Frame extends JFrame {
             } else
                label.setText("용사님이 +1만큼의 체력을 회복했습니다 !");
             label.setVisible(true);
-            hp.setValue(num1);
-            num1 = num1 + 1;
+            hp.setValue(num1 = num1 + 1);
 
             hp2.setValue(num2);
 

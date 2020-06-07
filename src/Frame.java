@@ -33,7 +33,6 @@ class Frame extends JFrame {
    int num1 = 10;
    int num2 = 10;
    JButton b1, b2, b3, b4, b5;
-   int level2 = 1;
    
    public Frame() {
       setTitle("Fight of Two Four");
@@ -100,12 +99,7 @@ class Frame extends JFrame {
       
       label.la1= new JLabel("lv." + lv.level1);
       label.la1.setBounds(82, 125, 100, 50); 
-     p.add(label.la1);
-
-  JLabel la2 = new JLabel("lv." + level2);
-  la2.setBounds(264, 125, 100, 50);
-  p.add(la2);
-  
+     p.add(label.la1);  
 
       JProgressBar hp, hp2;
       hp = new JProgressBar(0, 10);

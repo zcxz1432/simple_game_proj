@@ -23,20 +23,18 @@ public class Main extends JFrame {
 			public void paintComponent(Graphics g) {
 				setBackground(Color.white);
 				super.paintComponent(g);
-		
-	
+
 			}
 		};
-		
+
 		JLabel label = new JLabel("");
 		label.setBounds(50, 130, 250, 50);
 		label.setText("Fight of Two Four");
 		label.setFont(new Font("고딕", Font.PLAIN, 30));
 
 		label.setVisible(true);
-		
-		p1.add(label);
 
+		p1.add(label);
 
 		p1.setLayout(null);
 		p1.setBackground(Color.white);
@@ -82,44 +80,38 @@ public class Main extends JFrame {
 
 		});
 	}
-	
+
 	class Window extends JFrame {
 
-		   Window() {
-		      setTitle("how to play");
+		Window() {
+			setTitle("how to play");
 
-		      JPanel WindowContainer = new JPanel();
-		      setContentPane(WindowContainer);
-		      JLabel label = new JLabel("<html>'Fight of Two Four'<br>"
-		    		+ "<br>"
-		    		+ "4가지 스킬을 사용해 두사를 처치하고 레벨업 <br>"
-		    		+ "<br>"
-		    		+ "공격 : 두사에게 데미지 1, 용사에게 데미지 2<br>"
-		    		+ "방어 : 용사 방어막 생성<br>"
-		    		+ "치유 : 용사 체력 회복 1<br>"
-		    		+ "은신 : 두사에게 보이지 않음(공격 1회 무력화)<br>"
-		    		+ "종료 : 게임 종료<br>");
-		      JButton b = new JButton("OK");
-		      b.setBackground(Color.WHITE);
-		      b.setBounds(130, 230, 70, 30);
-		      b.setFont(new Font("고딕", Font.PLAIN, 15));
-		      b.setFocusPainted(false);
+			JPanel WindowContainer = new JPanel();
+			setContentPane(WindowContainer);
+			JLabel label = new JLabel("<html>'Fight of Two Four'<br>" + "<br>" + "4가지 스킬을 사용해 두사를 처치하고 레벨업 <br>"
+					+ "<br>" + "공격 : 두사에게 데미지 1, 용사에게 데미지 2<br>" + "방어 : 용사 방어막 생성<br>" + "치유 : 용사 체력 회복 1<br>"
+					+ "은신 : 두사에게 보이지 않음(공격 1회 무력화)<br>" + "종료 : 게임 종료<br>");
+			JButton b = new JButton("OK");
+			b.setBackground(Color.WHITE);
+			b.setBounds(130, 230, 70, 30);
+			b.setFont(new Font("고딕", Font.PLAIN, 15));
+			b.setFocusPainted(false);
 
-		      WindowContainer.add(label);
-		      WindowContainer.add(b);
-		      WindowContainer.setLayout(null);
-		      label.setBounds(30, 0, 340, 250);
+			WindowContainer.add(label);
+			WindowContainer.add(b);
+			WindowContainer.setLayout(null);
+			label.setBounds(30, 0, 340, 250);
 
-		      setSize(160, 120);
-		      setBounds(5, 255, 340, 320);
-		      setVisible(true);
-		      b.addActionListener(new ActionListener() {
-		    	  public void actionPerformed(ActionEvent e) {
-		    		  dispose();	    		  
-			          }
-		    	  });
-		   }
+			setSize(160, 120);
+			setBounds(5, 255, 340, 320);
+			setVisible(true);
+			b.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					dispose();
+				}
+			});
 		}
+	}
 
 	public static void main(String[] args) {
 		Main frame = new Main();

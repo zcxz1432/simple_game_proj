@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -45,6 +46,7 @@ public class Main extends JFrame {
 		c1.setFont(new Font("고딕", Font.PLAIN, 28));
 		c1.setBackground(Color.white);
 		c1.setBorderPainted(false);
+		c1.setFocusPainted(false);
 
 		p1.add(c1);
 		scrollPane = new JScrollPane(p1);
@@ -65,19 +67,59 @@ public class Main extends JFrame {
 		c2.setFont(new Font("고딕", Font.PLAIN, 28));
 		c2.setBackground(Color.white);
 		c2.setBorderPainted(false);
+		c2.setFocusPainted(false);
 
 		p1.add(c2);
 		scrollPane = new JScrollPane(p1);
 		setContentPane(scrollPane);
 
-		c1.addActionListener(new ActionListener() {
+		c2.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
+				new Window();
 
 			}
 
 		});
 	}
+	
+	class Window extends JFrame {
+
+		   Window() {
+		      setTitle("how to play");
+
+		      JPanel WindowContainer = new JPanel();
+		      setContentPane(WindowContainer);
+		      JLabel label = new JLabel("<html>'Fight of Two Four'<br>"
+		    		+ "<br>"
+		    		+ "4가지 스킬을 사용해 두사를 처치하고 레벨업 <br>"
+		    		+ "<br>"
+		    		+ "공격 : 두사에게 데미지 1, 용사에게 데미지 2<br>"
+		    		+ "방어 : 용사 방어막 생성<br>"
+		    		+ "치유 : 용사 체력 회복 1<br>"
+		    		+ "은신 : 두사에게 보이지 않음(공격 1회 무력화)<br>"
+		    		+ "종료 : 게임 종료<br>");
+		      JButton b = new JButton("OK");
+		      b.setBackground(Color.WHITE);
+		      b.setBounds(130, 230, 70, 30);
+		      b.setFont(new Font("고딕", Font.PLAIN, 15));
+		      b.setFocusPainted(false);
+
+		      WindowContainer.add(label);
+		      WindowContainer.add(b);
+		      WindowContainer.setLayout(null);
+		      label.setBounds(30, 0, 340, 250);
+
+		      setSize(160, 120);
+		      setBounds(5, 255, 340, 320);
+		      setVisible(true);
+		      b.addActionListener(new ActionListener() {
+		    	  public void actionPerformed(ActionEvent e) {
+		    		  dispose();	    		  
+			          }
+		    	  });
+		   }
+		}
 
 	public static void main(String[] args) {
 		Main frame = new Main();

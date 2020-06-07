@@ -15,11 +15,26 @@ import javax.swing.JProgressBar;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
+
+class lv {
+      public static int level1 = 1;
+     
+   
+}
+
+
+class label{
+    public static JLabel la1;
+  
+}
+
+
 class Frame extends JFrame {
    int num1 = 10;
    int num2 = 10;
    JButton b1, b2, b3, b4, b5;
-
+   int level2 = 1;
+   
    public Frame() {
       setTitle("Fight of Two Four");
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -77,11 +92,20 @@ class Frame extends JFrame {
       JLabel label4 = new JLabel("두사");
       label4.setBounds(235, 125, 100, 50);
       p.add(label4);
-
+    
       JLabel label2 = new JLabel(new ImageIcon(img2));
       p2.setOpaque(false);
       p.add(label2);
       label2.setBounds(205, 43, 90, 90);
+      
+      label.la1= new JLabel("lv." + lv.level1);
+      label.la1.setBounds(82, 125, 100, 50); 
+     p.add(label.la1);
+
+  JLabel la2 = new JLabel("lv." + level2);
+  la2.setBounds(264, 125, 100, 50);
+  p.add(la2);
+  
 
       JProgressBar hp, hp2;
       hp = new JProgressBar(0, 10);
@@ -174,7 +198,7 @@ class Frame extends JFrame {
             if (num2 <= 0 && num1 >= 1) {
                label.setText("용사님이 두사를 처치했습니다 !");        
                new Levelup();
-
+               hp.setVisible(true);
             } else if (num1 <= 0) {
                label.setText("<html>용사님의 체력이 바닥났습니다 !" + "<br> 게임을 다시 시작해주세요 !");
                label.setVisible(true);
@@ -194,34 +218,19 @@ class Frame extends JFrame {
         	  hp.setValue(num1 - 2);
               num1 = num1 - 2;
         	}
-              
-           
-            
-
+       
             hp.setVisible(true);
             hp2.setVisible(true);
             label10.setVisible(false);
             
             label1.setVisible(true);
-            
-            
-            
-            
+
             }
-            
-            
-            
-            
-            
+
           
          }
 
-         
-                  
-        
-         
-       
-         
+    
       });
 
       b2.addActionListener(new ActionListener() { // 방어
@@ -380,18 +389,14 @@ class Levelup extends JFrame {
       setSize(160, 120);
       setBounds(5, 255, 340, 100);
       setVisible(true);
+  btn.addActionListener(new ActionListener() {
 
-      btn.addActionListener(new ActionListener() {
+	          public void actionPerformed(ActionEvent e) {
+	             dispose();
+	             lv.level1 = lv.level1 + 1;
+	             label.la1.setText("lv." + lv.level1);
 
-         public void actionPerformed(ActionEvent e) {
-            dispose();
-
-         }
-      });
-
-   }
-
-   private void Levelup() {
-      //레벨업 이벤트
+	          }
+	       });
    }
 }

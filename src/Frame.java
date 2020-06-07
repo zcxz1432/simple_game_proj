@@ -53,21 +53,21 @@ class Frame extends JFrame {
 
       try {
 
-         File image1 = new File("play.png");
+         File image1 = new File("Images/play.png");
          img1 = ImageIO.read(image1);
-         File image2 = new File("enemy.png");
+         File image2 = new File("Images/enemy.png");
          img2 = ImageIO.read(image2);
-         File image3 = new File("screenshots/attack.png");
+         File image3 = new File("Images/attack.png");
          img3 = ImageIO.read(image3);
-         File image4 = new File("screenshots/defense.png");
+         File image4 = new File("Images/defense.png");
          img4 = ImageIO.read(image4);
-         File image5 = new File("screenshots/heal.png");
+         File image5 = new File("Images/heal.png");
          img5 = ImageIO.read(image5);
-         File image6 = new File("screenshots/hiding.png");
+         File image6 = new File("Images/hiding.png");
          img6 = ImageIO.read(image6);
-         File image7 = new File("screenshots/end.png");
+         File image7 = new File("Images/end.png");
          img7 = ImageIO.read(image7);
-         File image8 = new File("screenshots/shield.png");
+         File image8 = new File("Images/shield.png");
          img8 = ImageIO.read(image8);
 
       } catch (IOException e) {

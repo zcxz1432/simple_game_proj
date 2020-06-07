@@ -198,6 +198,8 @@ class Frame extends JFrame {
             if (num2 <= 0 && num1 >= 1) {
                label.setText("용사님이 두사를 처치했습니다 !");        
                new Levelup();
+               hp2.setValue(num2 = 10);
+
              
             } else if (num1 <= 0) {
                label.setText("<html>용사님의 체력이 바닥났습니다 !" + "<br> 게임을 다시 시작해주세요 !");
